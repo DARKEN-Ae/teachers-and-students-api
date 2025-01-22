@@ -1,9 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* transition: ease-in-out 0.3s; */
+}
 body {
-  background: url(../assets/IT_Klaster_Wallpaper.png);
+  background: linear-gradient(rgb(92, 84, 112), rgb(53, 47, 68));
   background-size: cover;
   background-repeat: no-repeat;
   font-family: "Montserrat";
+  background-position: center;
+  background-attachment: fixed;
 }
 .gif-ft {
   display: flex;
@@ -18,4 +28,89 @@ body {
 }
 h1 {
   color: #fff;
+}
+.card {
+  background: none;
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  color: #fff;
+  font-weight: bold;
+  border-color: #a200ff;
+  transition: ease-in-out 0.3s;
+  background: linear-gradient(
+    45deg,
+    rgb(119, 0, 255),
+    rgba(255, 255, 255, 0),
+    rgba(111, 0, 255, 0.244),
+    rgb(0, 0, 0)
+  );
+  background-size: 400% 400%;
+  animation: backgroundAnimation 8s infinite;
+
+  &:hover {
+    transform: scale3d(1.05, 1.05, 1.05);
+    border-color: #fff;
+    -webkit-box-shadow: 0px 0px 153px 6px rgba(161, 46, 255, 0.4);
+    -moz-box-shadow: 0px 0px 153px 6px rgba(161, 46, 255, 0.4);
+    box-shadow: 0px 0px 153px 6px rgba(161, 46, 255, 0.4);
+  }
+  .btn {
+    padding: 0px 20px;
+    border-radius: 10px;
+    font-size: small;
+    font-weight: bold;
+  }
+  .card-title {
+    font-size: 12px;
+  }
+  .edit-btn {
+    background-color: #a200ff;
+    border-color: #ffffff;
+    transition: ease-in-out 0.3s;
+    &:hover {
+      background-color: #ffffff;
+      color: #a200ff;
+    }
+  }
+  img {
+    border-radius: 50%;
+    width: 200px;
+    margin: 0 auto;
+    margin-top: 15px;
+    border: 2px solid #a200ff;
+    transition: ease-in-out 0.3s;
+  }
+}
+@keyframes backgroundAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.category-open-btn {
+  background-color: #a200ff;
+  border-color: #ffffff;
+  transition: ease-in-out 0.3s;
+  color: #fff;
+  &:hover {
+    background-color: #ffffff;
+    color: #a200ff;
+    border-color: #a200ff;
+  }
+}
+.btn-primary {
+  background-color: #a200ff;
+  border-color: #ffffff;
+  transition: ease-in-out 0.3s;
+  color: #fff;
+  &:hover {
+    background-color: #ffffff;
+    color: #a200ff;
+    border-color: #a200ff;
+  }
 }

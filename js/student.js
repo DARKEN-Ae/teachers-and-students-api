@@ -1,14 +1,13 @@
 import request from "./instance.js";
 import { LIMIT } from "./const.js";
 
-const allCard = document.querySelector(".all-card"),
+const allCard = document.getElementById("studentCardContainer"),
   categoryInput = document.querySelector(".category-input"),
   pagination = document.querySelector(".pagination"),
   categoryForm = document.querySelector(".category-form"),
   cadegoryModalClose = document.querySelector(".cadegory-modal-close"),
   categoryOpenBtn = document.querySelector(".category-open-btn"),
-  addSaveBtn = document.querySelector(".add-save-btn"),
-  checkBox = document.getElementById("defaultCheck1");
+  addSaveBtn = document.querySelector(".add-save-btn");
 
 let search = "";
 let activePage = 1;
@@ -18,13 +17,14 @@ function getCard({
   firstName,
   lastName,
   images,
-  group,
-  isMarried,
+  brithday,
+  isWork,
+  field,
   phoneNumber,
   email,
   id,
 }) {
-  let marrid = isMarried ? "Yes✅" : "No❌";
+  let work = isWork ? `${isWork}` : "No❌";
   return `
    <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
       <div class="card" id="animatedCard">
@@ -32,8 +32,9 @@ function getCard({
         <div class="card-body">
           <p class="card-title">Name: ${firstName}</p>
           <p class="card-title">Last Name: ${lastName}</p>
-          <p class="card-title">Group: ${group}</p>
-          <p class="card-title">Is Married: ${marrid}</p>
+          <p class="card-title">Brithday: ${brithday}</p>
+          <p class="card-title">Is Work: ${work}</p>
+          <p class="card-title">Field: ${field}</p>
           <p class="card-title">Phone Number: ${phoneNumber}</p>
           <p class="card-title">Email: ${email}</p>
           <div class="d-flex" style="gap:3px">
@@ -42,7 +43,6 @@ function getCard({
                 data-bs-target="#exampleModal" 
                 id="${id}">Edit</button>
             <button class="btn btn-danger delete-btn" id="${id}">Delete</button>
-            <a style="font-size: 10px;" href="./students.html?teacher/${id}/student=${id}" class="btn btn-primary">View to Student</a>
           </div>
         </div>
       </div>
@@ -63,14 +63,14 @@ async function getData() {
     let params = {
       firstName: search,
     };
-    let { data } = await request.get("/teacher", { params });
+    let { data } = await request.get("/student", { params });
 
     let paramsWidth = {
       firstName: search,
       page: activePage,
       limit: 10,
     };
-    let { data: dataWidth } = await request.get("/teacher", {
+    let { data: dataWidth } = await request.get("/student", {
       params: paramsWidth,
     });
 
@@ -133,12 +133,12 @@ categoryForm.addEventListener("submit", async function (e) {
     firstName: this.firstName.value,
     images: this.images.value,
     lastName: this.lastName.value,
-    isMarried: checkBox.checked,
+    isWork: this.isWork.value,
   };
   if (selected == null) {
-    await request.post("/teacher", categoryData);
+    await request.post("/student", categoryData);
   } else {
-    await request.put(`/teacher/${selected}`, categoryData);
+    await request.put(`/student/${selected}`, categoryData);
   }
   getData();
 
@@ -150,7 +150,7 @@ categoryOpenBtn.addEventListener("click", function (e) {
   categoryForm.firstName.value = "";
   categoryForm.images.value = "";
   categoryForm.lastName.value = "";
-  categoryForm.isMarried.checked = false;
+  categoryForm.isWork.value = "";
   addSaveBtn.textContent = "Add Save";
 });
 
@@ -160,18 +160,18 @@ window.addEventListener("click", async function (e) {
   if (checkModal) {
     selected = id;
 
-    let { data } = await request.get(`/teacher/${id}`);
+    let { data } = await request.get(`/student/${id}`);
     categoryForm.firstName.value = data.firstName;
     categoryForm.images.value = data.images;
     categoryForm.lastName.value = data.lastName;
-    categoryForm.isMarried.checked = data.isMarried;
+    categoryForm.isWork.checked = data.isWork;
     addSaveBtn.textContent = "Edit Save";
   }
   let checkDelete = e.target.classList.contains("delete-btn");
   if (checkDelete) {
     let isDelete = confirm("Delete Category?");
     if (isDelete) {
-      await request.delete(`/teacher/${id}`);
+      await request.delete(`/teacher/${id}/student/${id}`);
       getData();
     }
   }

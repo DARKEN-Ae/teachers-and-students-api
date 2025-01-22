@@ -25,7 +25,8 @@
     ></script>
     <script defer type="module" src="./js/const.js"></script>
     <script defer type="module" src="./js/instance.js"></script>
-    <script defer type="module" src="./js/getData.js"></script>
+    <!-- <script defer type="module" src="./js/getData.js"></script> -->
+    <script defer type="module" src="./js/student.js"></script>
     <!-- <script defer type="module" src="./js/validation.js"></script> -->
   </head>
   <body>
@@ -50,11 +51,16 @@
     </header>
 
     <div class="container">
-      <h1 class="text-center">Developers Students</h1>
-      <div class="row all-card g-3"></div>
+      <span
+        ><a style="color: #0062ff; text-decoration: none" href="/"
+          >← Back to all teachers</a
+        ></span
+      >
+      <h1 class="text-center">Students</h1>
+      <div id="studentCardContainer" class="row g-3"></div>
+      <!-- <div class="row all-card g-3"></div> -->
       <ul class="pagination mt-3"></ul>
     </div>
-
     <div
       class="modal fade cadegory-modal-close"
       id="exampleModal"
@@ -83,6 +89,23 @@
                   type="text"
                   class="form-control"
                   id="firstName"
+                  required
+                />
+                <label for="lastName" class="form-label">Last name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="lastName"
+                  required
+                />
+                <label for="isWork" class="form-label"
+                  >What's Your Work ?</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="isWork"
+                  placeholder="Write the name of your Job."
                   required
                 />
                 <div class="valid-feedback">Looks good!</div>
