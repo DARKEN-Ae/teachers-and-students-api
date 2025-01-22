@@ -24,7 +24,7 @@ function getCard({
   email,
   id,
 }) {
-  let work = isWork ? `${isWork}` : "No❌";
+  let work = isWork ? `${isWork}✅` : "No❌";
   return `
    <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
       <div class="card" id="animatedCard">
