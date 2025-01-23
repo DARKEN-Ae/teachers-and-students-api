@@ -81,7 +81,8 @@ h1 {
     border: 2px solid #ffffff;
     transition: ease-in-out 0.3s;
     position: absolute;
-    right: 5px;
+    right: -2px;
+    top: -15px;
   }
 }
 @keyframes backgroundAnimation {
@@ -121,4 +122,9 @@ h1 {
   display: flex;
   justify-content: center;
   margin-top: 10px;
+}
+.page-inf {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

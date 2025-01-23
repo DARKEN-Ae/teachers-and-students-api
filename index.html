@@ -31,8 +31,6 @@
     <script defer type="module" src="./js/const.js"></script>
     <script defer type="module" src="./js/instance.js"></script>
     <script defer type="module" src="./js/getData.js"></script>
-    <script defer type="module" src="./js/main.js"></script>
-    <!-- <script defer type="module" src="./js/validation.js"></script> -->
   </head>
   <body>
     <header>
@@ -56,6 +54,20 @@
     </header>
 
     <div class="container">
+      <div class="page-inf">
+        <!-- <span
+          ><a style="color: #0062ff; text-decoration: none" href="/"
+            >← Back to all teachers</a
+          ></span
+        > -->
+        <span>
+          <a href="./information.html"
+            ><button class="btn btn-success edit-btn">
+              Ma'lumotlarni Kiritish Sahifasi
+            </button></a
+          >
+        </span>
+      </div>
       <h1 class="text-center">
         <span
           style="
@@ -142,43 +154,6 @@
           </div>
         </form>
       </div>
-    </div>
-
-    <div class="container my-3">
-      <form>
-        <div class="mb-3 col-6">
-          <label for="fish" class="form-label">F.I.Sh</label>
-          <input
-            type="text"
-            class="form-control input-name"
-            id="fish"
-            aria-describedby="emailHelp"
-            placeholder="Ismingizni kiriting"
-            required
-          />
-        </div>
-        <div class="mb-3 col-6">
-          <label for="phone" class="form-label">Telefon Raqam</label>
-          <input
-            type="text"
-            class="form-control input-phone"
-            id="phone"
-            aria-describedby="emailHelp"
-            placeholder="Telefon raqamingizni kiriting"
-          />
-        </div>
-        <div class="mb-3 col-6">
-          <label for="msg" class="form-label">Xabaringiz</label>
-          <textarea
-            class="form-control input-msg"
-            id="msg"
-            rows="3"
-            placeholder="Xabar yozing"
-          ></textarea>
-        </div>
-
-        <button type="submit" class="btn btn-success">Submit</button>
-      </form>
     </div>
   </body>
 </html>

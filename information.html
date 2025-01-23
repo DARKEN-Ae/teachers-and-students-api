@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Information</title>
+    <link
+      rel="icon"
+      href="./assets/IT_Klaster_Wallpaper.png"
+      type="image/x-icon"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script
+      defer
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container my-3">
+      <span>
+        <a style="color: #0062ff; text-decoration: none" href="/"
+          >← Back to all teachers</a
+        ></span
+      >
+      <form>
+        <div class="mb-3 col-6">
+          <label style="color: #fff" for="fish" class="form-label"
+            >F.I.Sh</label
+          >
+          <input
+            type="text"
+            class="form-control input-name"
+            id="fish"
+            aria-describedby="emailHelp"
+            placeholder="Ismingizni kiriting"
+            required
+          />
+        </div>
+        <div class="mb-3 col-6">
+          <label style="color: #fff" for="phone" class="form-label"
+            >Telefon Raqam</label
+          >
+          <input
+            type="text"
+            class="form-control input-phone"
+            id="phone"
+            aria-describedby="emailHelp"
+            placeholder="Telefon raqamingizni kiriting"
+          />
+        </div>
+        <div class="mb-3 col-6">
+          <label style="color: #fff" for="msg" class="form-label"
+            >Xabaringiz</label
+          >
+          <textarea
+            class="form-control input-msg"
+            id="msg"
+            rows="3"
+            placeholder="Xabar yozing"
+          ></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-success">Yuborish</button>
+      </form>
+    </div>
+    <script src="./js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </body>
+</html>

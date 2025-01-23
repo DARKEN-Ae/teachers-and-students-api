@@ -30,9 +30,7 @@
     ></script>
     <script defer type="module" src="./js/const.js"></script>
     <script defer type="module" src="./js/instance.js"></script>
-    <!-- <script defer type="module" src="./js/getData.js"></script> -->
     <script defer type="module" src="./js/student.js"></script>
-    <!-- <script defer type="module" src="./js/validation.js"></script> -->
   </head>
   <body>
     <header>
@@ -56,16 +54,26 @@
     </header>
 
     <div class="container">
-      <span
-        ><a style="color: #0062ff; text-decoration: none" href="/"
-          >← Back to all teachers</a
-        ></span
-      >
+      <div class="page-inf">
+        <span
+          ><a style="color: #0062ff; text-decoration: none" href="/"
+            >← Back to all teachers</a
+          ></span
+        >
+        <span>
+          <a href="./information.html"
+            ><button class="btn btn-success edit-btn">
+              Ma'lumotlarni Kiritish Sahifasi
+            </button></a
+          >
+        </span>
+      </div>
       <h1 class="text-center">Students</h1>
       <div id="studentCardContainer" class="row g-3"></div>
       <!-- <div class="row all-card g-3"></div> -->
       <ul class="pagination mt-3"></ul>
     </div>
+
     <div
       class="modal fade cadegory-modal-close"
       id="exampleModal"
