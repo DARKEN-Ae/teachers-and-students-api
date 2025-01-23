@@ -54,7 +54,7 @@ async function getData() {
   try {
     allCard.innerHTML = `<div style="display: flex; justify-content: center; align-items: center; margin-top: 14vh;">
       <img
-      style="border-radius: 50%"
+      style="border-radius: 18%"
         className="img-fluid"
         src="../assets/tenor.gif"
         alt="Loading..."
