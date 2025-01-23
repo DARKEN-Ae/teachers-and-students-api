@@ -31,6 +31,7 @@
     <script defer type="module" src="./js/const.js"></script>
     <script defer type="module" src="./js/instance.js"></script>
     <script defer type="module" src="./js/getData.js"></script>
+    <script defer type="module" src="./js/main.js"></script>
     <!-- <script defer type="module" src="./js/validation.js"></script> -->
   </head>
   <body>
@@ -142,5 +143,49 @@
         </form>
       </div>
     </div>
+
+    <div class="container my-4">
+      <form>
+        <!-- F.I.Sh -->
+        <div class="mb-3">
+          <label for="fish" class="form-label">F.I.Sh</label>
+          <input
+            type="text"
+            class="form-control input-name"
+            id="fish"
+            placeholder="Ismingizni kiriting"
+            required
+          />
+        </div>
+
+        <!-- Phone Number -->
+        <div class="mb-3">
+          <label for="phone" class="form-label">Telefon raqami</label>
+          <input
+            type="text"
+            class="form-control input-phone"
+            id="phone"
+            placeholder="+998 XX XXX XX XX"
+            required
+          />
+        </div>
+
+        <!-- Message -->
+        <div class="mb-3">
+          <label for="msg" class="form-label">Xabar</label>
+          <textarea
+            class="form-control input-msg"
+            id="msg"
+            rows="3"
+            placeholder="Xabaringizni kiriting"
+            required
+          ></textarea>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-success w-100">Yuborish</button>
+      </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </body>
 </html>
