@@ -12,6 +12,9 @@ const allCard = document.getElementById("studentCardContainer"),
 let search = "";
 let activePage = 1;
 let selected = null;
+let studentUrl = window.location.href;
+var TeacherId = `${studentUrl}`.split("/");
+var teacher__id = TeacherId[4];
 
 function getCard({
   firstName,
@@ -99,7 +102,9 @@ async function getData() {
 
     allCard.innerHTML = "";
     dataWidth.map((category) => {
-      allCard.innerHTML += getCard(category);
+      if (category.teacherId == teacher__id) {
+        allCard.innerHTML += getCard(category);
+      }
     });
   } catch (err) {
     console.log(err);
