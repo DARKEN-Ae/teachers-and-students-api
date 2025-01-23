@@ -3,53 +3,70 @@ let inputName = document.querySelector(".input-name");
 let inputPhone = document.querySelector(".input-phone");
 let inputMsg = document.querySelector(".input-msg");
 
-let userLocation = null;
-
-function getUserLocation() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(
-      (position) => {
-        userLocation = {
-          latitude: position.coords.latitude,
-          longitude: position.coords.longitude,
-        };
-        console.log("Location obtained:", userLocation);
-      },
-      (error) => {
-        console.error("Error getting location:", error.message);
-        alert("Joylashuvni olishda xatolik yuz berdi. Iltimos, ruxsat bering!");
-      }
-    );
-  } else {
-    alert("Brauzeringiz geolokatsiyani qo'llab-quvvatlamaydi.");
-  }
-}
-
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  let fullName = inputName.value.trim();
-  let phoneNumber = inputPhone.value.trim();
-  let inputMessage = inputMsg.value.trim();
+  let fullName = inputName.value;
+  let phoneNumber = inputPhone.value;
+  let inputMessage = inputMsg.value;
 
-  if (!fullName || !phoneNumber || !inputMessage) {
-    alert("Iltimos, barcha maydonlarni to'ldiring!");
-    return;
-  }
-
-  const emoji = [
-    { emoji: "✅", description: "check mark button" },
-    { emoji: "📞", description: "telephone receiver" },
-    { emoji: "📍", description: "location pin" },
-    { emoji: "👤", description: "user" },
-    { emoji: "💬", description: "speech balloon" },
+  emoji = [
+    {
+      emoji: "✅",
+      description: "check mark button",
+      category: "Symbols",
+      aliases: ["white_check_mark"],
+      tags: [],
+      unicode_version: "6.0",
+      ios_version: "6.0",
+    },
+    {
+      emoji: "📞",
+      description: "telephone receiver",
+      category: "Objects",
+      aliases: ["telephone_receiver"],
+      tags: ["phone", "call"],
+      unicode_version: "6.0",
+      ios_version: "6.0",
+    },
+    {
+      emoji: "⏰",
+      description: "alarm clock",
+      category: "Travel & Places",
+      aliases: ["alarm_clock"],
+      tags: ["morning"],
+      unicode_version: "6.0",
+      ios_version: "6.0",
+    },
+    {
+      emoji: "👤",
+      description: "bust in silhouette",
+      category: "People & Body",
+      aliases: ["bust_in_silhouette"],
+      tags: ["user"],
+      unicode_version: "6.0",
+      ios_version: "6.0",
+    },
+    {
+      emoji: "💬",
+      description: "speech balloon",
+      category: "Smileys & Emotion",
+      aliases: ["speech_balloon"],
+      tags: ["comment"],
+      unicode_version: "6.0",
+      ios_version: "6.0",
+    },
+    {
+      emoji: "📆",
+      description: "tear-off calendar",
+      category: "Objects",
+      aliases: ["calendar"],
+      tags: ["schedule"],
+      unicode_version: "6.0",
+      ios_version: "6.0",
+    },
   ];
 
-  let locationInfo = userLocation
-    ? `${emoji[2].emoji}<b> Manzili:</b> <i>${userLocation.latitude}, ${userLocation.longitude}</i>%0A`
-    : `${emoji[2].emoji}<b> Manzili:</b> <i>Malumot berilmadi</i>%0A`;
-
-  let my_text = `${emoji[3].emoji}<b> F.I.SH:</b> <i>${fullName}</i>%0A${emoji[1].emoji}<b> Tel.:</b> <i>${phoneNumber}</i>%0A${emoji[4].emoji}<b> Xabar:</b> <i>${inputMessage}</i>%0A${locationInfo}`;
-
+  let my_text = `${emoji[3].emoji}<b> F.I.SH:</b> <i>${fullName}</i>%0A${emoji[1].emoji}<b> Tel.:</b> <i>${phoneNumber}</i>%0A${emoji[4].emoji}<b> Xabar:</b> <i>${inputMessage}</i>`;
   let token = "7761472526:AAG4llldleTeQ-glw-2TmuUlLYw1zhnINrM";
   let chat_id = -4665797146;
   let url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}&text=${my_text}&parse_mode=html`;
@@ -57,20 +74,12 @@ form.addEventListener("submit", (e) => {
   axios
     .get(url)
     .then((res) => {
-      if (res.status === 200) {
-        alert("Xabar muvaffaqiyatli yuborildi!");
-      } else {
-        alert("Xabar yuborishda xatolik yuz berdi.");
-      }
+      res.data;
     })
     .catch((error) => {
-      console.error("Xatolik:", error.message);
-      alert("Telegram API bilan ulanishda xatolik yuz berdi.");
+      console.error(error);
     });
-
   inputName.value = "";
   inputPhone.value = "";
   inputMsg.value = "";
 });
-
-getUserLocation();

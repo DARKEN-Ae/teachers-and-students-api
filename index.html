@@ -49,7 +49,7 @@
             data-bs-toggle="modal"
             data-bs-target="#exampleModal"
           >
-            Add to Cart
+            Add to Card
           </button>
         </div>
       </div>
@@ -144,48 +144,41 @@
       </div>
     </div>
 
-    <div class="container my-4">
+    <div class="container my-3">
       <form>
-        <!-- F.I.Sh -->
-        <div class="mb-3">
+        <div class="mb-3 col-6">
           <label for="fish" class="form-label">F.I.Sh</label>
           <input
             type="text"
             class="form-control input-name"
             id="fish"
+            aria-describedby="emailHelp"
             placeholder="Ismingizni kiriting"
             required
           />
         </div>
-
-        <!-- Phone Number -->
-        <div class="mb-3">
-          <label for="phone" class="form-label">Telefon raqami</label>
+        <div class="mb-3 col-6">
+          <label for="phone" class="form-label">Telefon Raqam</label>
           <input
             type="text"
             class="form-control input-phone"
             id="phone"
-            placeholder="+998 XX XXX XX XX"
-            required
+            aria-describedby="emailHelp"
+            placeholder="Telefon raqamingizni kiriting"
           />
         </div>
-
-        <!-- Message -->
-        <div class="mb-3">
-          <label for="msg" class="form-label">Xabar</label>
+        <div class="mb-3 col-6">
+          <label for="msg" class="form-label">Xabaringiz</label>
           <textarea
             class="form-control input-msg"
             id="msg"
             rows="3"
-            placeholder="Xabaringizni kiriting"
-            required
+            placeholder="Xabar yozing"
           ></textarea>
         </div>
 
-        <!-- Submit Button -->
-        <button type="submit" class="btn btn-success w-100">Yuborish</button>
+        <button type="submit" class="btn btn-success">Submit</button>
       </form>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </body>
 </html>

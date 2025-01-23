@@ -30,18 +30,19 @@ h1 {
   color: #fff;
 }
 .card {
+  position: relative;
   background: none;
   backdrop-filter: blur(10px);
-  border-radius: 10px;
+  border-radius: 23px 48px 23px 48px;
   color: #fff;
   font-weight: bold;
-  border-color: #a200ff;
+  border-color: #004cff;
   transition: ease-in-out 0.3s;
   background: linear-gradient(
     45deg,
     rgb(0, 85, 255),
     rgba(255, 255, 255, 0),
-    rgba(111, 0, 255, 0.244),
+    rgba(0, 38, 255, 0.244),
     rgb(0, 0, 0)
   );
   background-size: 400% 400%;
@@ -50,9 +51,9 @@ h1 {
   &:hover {
     transform: scale3d(1.05, 1.05, 1.05);
     border-color: #fff;
-    -webkit-box-shadow: 0px 0px 153px 6px rgba(161, 46, 255, 0.4);
-    -moz-box-shadow: 0px 0px 153px 6px rgba(161, 46, 255, 0.4);
-    box-shadow: 0px 0px 153px 6px rgba(161, 46, 255, 0.4);
+    -webkit-box-shadow: 0px 0px 153px 6px rgba(46, 84, 255, 0.4);
+    -moz-box-shadow: 0px 0px 153px 6px rgba(46, 109, 255, 0.4);
+    box-shadow: 0px 0px 153px 6px rgba(46, 74, 255, 0.4);
   }
   .btn {
     padding: 0px 20px;
@@ -64,21 +65,23 @@ h1 {
     font-size: 12px;
   }
   .edit-btn {
-    background-color: #a200ff;
+    background-color: #0048ff;
     border-color: #ffffff;
     transition: ease-in-out 0.3s;
     &:hover {
       background-color: #ffffff;
-      color: #a200ff;
+      color: #0044ff;
     }
   }
   img {
-    border-radius: 50%;
-    width: 200px;
+    border-radius: 100%;
+    width: 100px;
     margin: 0 auto;
     margin-top: 15px;
-    border: 2px solid #a200ff;
+    border: 2px solid #ffffff;
     transition: ease-in-out 0.3s;
+    position: absolute;
+    right: 5px;
   }
 }
 @keyframes backgroundAnimation {
@@ -93,14 +96,14 @@ h1 {
   }
 }
 .category-open-btn {
-  background-color: #a200ff;
+  background-color: #002aff;
   border-color: #ffffff;
   transition: ease-in-out 0.3s;
   color: #fff;
   &:hover {
     background-color: #ffffff;
-    color: #a200ff;
-    border-color: #a200ff;
+    color: #0051ff;
+    border-color: #002fff;
   }
 }
 .btn-primary {
@@ -114,6 +117,8 @@ h1 {
     border-color: #a200ff;
   }
 }
-label {
-  color: #fff; 
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
 }

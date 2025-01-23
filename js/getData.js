@@ -79,7 +79,7 @@ async function getData() {
     pagination.innerHTML = ` <li class="page-item ${
       activePage === 1 ? "disabled" : ""
     }">
-      <button class="page-link" page="-" >Previous</button>
+      <button class="page-link" page="-" >«</button>
     </li>`;
 
     for (let i = 1; i <= pages; i++) {
@@ -93,7 +93,7 @@ async function getData() {
     pagination.innerHTML += ` <li class="page-item ${
       activePage === pages ? "disabled" : ""
     }">
-      <button class="page-link" page="+" >Next</button>
+      <button class="page-link" page="+" >»</button>
     </li>
     `;
 
