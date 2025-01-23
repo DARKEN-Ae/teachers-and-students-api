@@ -29,6 +29,12 @@ function getCard({
    <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
       <div class="card" id="animatedCard">
         <img src="${images}" class="card-img-top" alt="..." />
+       <a href="https://t.me/itklaster">
+        <img
+          class="klaster-logo"
+          src="./assets/it_klaster_logo.jpg"
+          alt="..."
+        /></a>
         <div class="card-body">
           <p class="card-title">Name: ${firstName}</p>
           <p class="card-title">Last Name: ${lastName}</p>

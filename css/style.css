@@ -84,6 +84,21 @@ h1 {
     right: -2px;
     top: -15px;
   }
+  .klaster-logo {
+    width: 35px;
+    margin: 0 auto;
+    margin-top: 15px;
+    border: 2px solid #ffffff;
+    transition: ease-in-out 0.3s;
+    position: absolute;
+    right: 0px;
+    top: -15px;
+    cursor: pointer;
+    opacity: 50%;
+    &:hover {
+      opacity: 100%;
+    }
+  }
 }
 @keyframes backgroundAnimation {
   0% {
@@ -131,4 +146,25 @@ h1 {
     flex-direction: column;
     align-items: center;
   }
+}
+
+.modal-content {
+  background: url(../assets/it_klaster_logo.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: "Montserrat";
+  background-position: center;
+  /* background-attachment: fixed; */
+}
+.modal-header {
+  backdrop-filter: blur(10px);
+  h1 {
+    color: #000000;
+  }
+}
+.modal-body {
+  backdrop-filter: blur(10px);
+}
+.modal-footer {
+  backdrop-filter: blur(10px);
 }
